@@ -1,9 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_PLACEHOLDER&callback=console.debug&libraries=maps,marker&v=beta">
+        </script>
+    <script src="js/script.js" defer></script>
+</head>
 
 <body>
-    <h1>Save the date</h1>
-    <h3>13/09/2025</h3>
+    <header>
+        <div class="header-content">
+            <h1 class="title">
+                <span class="title-text">Save the</span>
+                <span class="title-highlight">
+                    <svg class="title-decoration" viewBox="0 0 504 106" width="504" height="106">
+                        <path
+                            d="M22 43.61C307.49 18.32 458.1 15.23 473.83 34.32C497.42 62.96 213.65 52.13 107.17 65.26C0.69 78.39 -67.9 96.57 482 71.45" />
+                    </svg>
+                    <span>Date</span>
+                </span>
+            </h1>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="website/about.html">About</a></li>
+                <li><a href="website/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="row row1">Row 1</div>
+        <div class="row row2"><gmp-map center="39.36197280883789,-9.156925201416016" zoom="14" map-id="DEMO_MAP_ID">
+                <gmp-advanced-marker position="39.36197280883789,-9.156925201416016"
+                    title="My location"></gmp-advanced-marker>
+            </gmp-map></div>
+        <div class="row row3">Row 3</div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Our Date</p>
+    </footer>
 </body>
 
 </html>

@@ -1,0 +1,180 @@
+:root {
+  --primary-bg: #333;
+  --primary-text: #000000;
+  --secondary-bg: #2418cf;
+  --accent-color: #B053D8;
+  --header-bg: #10b418;
+}
+
+/* Global Styles */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+header {
+  background-color: var(--header-bg);
+  color: var(--primary-text);
+  padding: 1rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 2rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.title-highlight {
+  position: relative;
+  display: inline-block;
+  margin-left: 0.5rem;
+  z-index: 0;
+}
+
+.title-decoration {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.64, 0.77) rotate(2deg);
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+
+.title-decoration path {
+  fill: none;
+  stroke: var(--accent-color);
+  stroke-width: 43;
+  stroke-linecap: round;
+}
+
+/* Navigation Styles */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 1rem;
+}
+
+nav a {
+  color: var(--primary-bg);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Menu Toggle Styles */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: 20px;
+  width: 30px;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--primary-bg);
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* Main Content Styles */
+main {
+  background-color: var(--secondary-bg);
+  padding: 20px;
+  flex: 1 0 auto;
+}
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+gmp-map {
+  height: 100%;
+  width: 100%;
+}
+
+.row {
+  height: 33.33vh;
+  width: 100%;
+}
+
+.row1 {
+  background-color: #f0f0f0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23e0e0e0'/%3E%3C/svg%3E");
+}
+
+.row2 {
+  background-color: #e0e0e0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23d0d0d0'/%3E%3C/svg%3E");
+}
+
+.row3 {
+  background-color: #d0d0d0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpolygon points='50,10 90,90 10,90' fill='%23c0c0c0'/%3E%3C/svg%3E");
+}
+
+/* Footer Styles */
+footer {
+  flex-shrink: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav li {
+    margin: 0.5rem 0;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
